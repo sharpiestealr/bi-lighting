@@ -50,11 +50,11 @@ void RGB_color(int eye, int red, int green, int blue)
   }
 }
 
-static int pride(int count, String color)
+static int pride(int count, String cor)
 {  
     float red, green, blue;
     
-    if (color == "red")
+    if (cor == "red")
       {
         if (count <= 5) //pink
       {
@@ -96,7 +96,7 @@ static int pride(int count, String color)
       return redF;
       }
 
-    else if (color == "green")
+    else if (cor == "green")
     {
       if (count <= 5) //pink
       {
@@ -138,7 +138,7 @@ static int pride(int count, String color)
       return greenF;
     }
 
-    else if (color == "blue")
+    else if (cor == "blue")
     {
       if (count <= 5) //pink
       {
@@ -185,8 +185,8 @@ void loop()
 {
   if (count != 35)
   {
-    RGB_color(1, pride(count));
-    RGB_color(2, pride(count));
+    RGB_color(1, pride(count, "red"), pride(count, "green"), pride(count, "blue"));
+    RGB_color(2, pride(count, "red"), pride(count, "green"), pride(count, "blue"));
   }
 
   else
@@ -199,5 +199,5 @@ void loop()
   
   count ++;
   
-  delay 1000;
+  delay(1000);
 }
